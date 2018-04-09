@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-string = "{} Battery Street"
+string = "{:d} Battery Street"
 print (string.format(98))
