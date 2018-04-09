@@ -1,16 +1,26 @@
 #include "lists.h"
 #include <stdio.h>
+/**
+  * check_cycle - checks linked list for cycle
+  * list: list head
+  *
+  * Return: 0 for no cycle, 1 for cycle
+  */
 int check_cycle(listint_t *list)
 {
 	listint_t *slow;
 	listint_t *fast;
 	int i;
 
+	if (list == NULL)
+		return (0);
+	if (list->next == NULL)
+		return (0);
 	slow = list;
 	fast = list->next;
 
 	if (list->next ==  NULL)
-		return 0;
+		return (0);
 	while (fast != NULL  && slow != NULL)
 	{
 		if (slow == fast)
