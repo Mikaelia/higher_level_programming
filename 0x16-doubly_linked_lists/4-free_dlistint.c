@@ -1,9 +1,9 @@
 #include "lists.h"
-
 /**
-  * main - check the code for Holberton School students.
+  * free_dlistint - frees double linked list
+  * @head: head of linked list
   *
-  * Return: Always EXIT_SUCCESS.
+  * Return: void
   */
 void free_dlistint(dlistint_t *head)
 {
