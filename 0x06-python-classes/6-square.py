@@ -3,11 +3,17 @@ class Square:
     """A square class"""
 
     def __init__(self, size=0, position=(0, 0)):
+        """Initializes instance of Square
+        Args:
+            size (int): size of square
+            position (tuple): position of square
+        """
         self.size = size
         self.position = position
 
     @property
     def size(self):
+        """Gets size, and sets to an integer greater than zero"""
         return self.__size
 
     @size.setter
@@ -21,6 +27,7 @@ class Square:
 
     @property
     def position(self):
+        """gets property and sets it as tuple with positive ints"""
         return self.__position
 
     @position.setter
@@ -33,16 +40,18 @@ class Square:
             self.__position = value
 
     def area(self):
+        """finds area"""
         return self.__size ** 2
 
     def my_print(self):
+        """prints out square"""
         if self.__size == 0:
             print()
-        if self.__position[1]:
-            print(' ' * self.__position[1])
+        for i in range(self.__position[1]):
+            print()
         for x in range(self.__size):
-            if self.__postion[0]:
-                print(' ' * self.__position[0], end='')
+            for j in range(self.__position[0]):
+                print(' ', end='')
             for y in range(self.__size):
                 if y == (self.__size - 1):
                     print('#')
