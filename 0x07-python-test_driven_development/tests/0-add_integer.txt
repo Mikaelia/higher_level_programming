@@ -1,12 +1,30 @@
 >>> add_integer = __import__('0-add_integer').add_integer
+
 >>> add_integer(1, 2)
 3
->>> add_integer(2.04, 5)
+>>> add_integer(2.00979874, 5.099867)
 7
+>>> add_integer(1)
+99
+
+Input must me int/float
 >>> add_integer('a', 2)
 Traceback (most recent call last):
 TypeError: a must be an integer
+
 >>> add_integer(1, ["hi"])
 Traceback (most recent call last):
 TypeError: b must be an integer
 
+
+>>> add_integer("Hello")
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer("banana", ["hi"])
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+Return type must be integer
+>>> type(add_integer(2.3, 4.5))
+<class 'int'>

@@ -2,12 +2,25 @@
 
 >>> matrix = [[1, 2, 3],[4, 5, 6]]
 >>> matrix2 = [[1, 2],[4, 5, 6]]
+>>> matrix4 = ["HI"]
 >>> matrix3 = [['b', 'b'],['f', 'g']]
+>>> matrix5 = [[1, 2],['f', 3]]
+>>> matrix6 = [['1'],[]]
+>>> matrix7 = [[],[]]
+
+Matrix must be a matrix
+>>> print(matrix_divided(matrix4, 3))
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 Div must be a number
 >>> print(matrix_divided(matrix, "R"))
 Traceback (most recent call last):
 TypeError: div must be a number
+
+>>> print(matrix_divided(matrix, ))
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
 
 Matrix must have same row length
 >>> print(matrix_divided(matrix2, 3))
@@ -16,6 +29,20 @@ TypeError: Each row of the matrix must have the same size
 
 Matrix must consist of integers/floats
 >>> print(matrix_divided(matrix3, 3))
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> print(matrix_divided(matrix5, 3))
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+>>> print(matrix_divided(matrix6, 3))
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+>>> print(matrix_divided(matrix7, 3))
 Traceback (most recent call last):
 TypeError: matrix must be a matrix (list of lists) of integers/floats
 

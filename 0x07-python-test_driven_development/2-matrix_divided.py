@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-def matrix_divided(matrix, div):
+def matrix_divided(matrix=[[]], div=0):
     """
     A function that divides all elements of a matrix
 
@@ -16,7 +16,12 @@ def matrix_divided(matrix, div):
         ZeroDivisionError: If div is equal to 0
     """
 
-    new_matrix = []
+    new_matrix = [[]]
+
+    for row in matrix:
+        if not row:
+            raise TypeError(
+                'matrix must be a matrix (list of lists) of integers/floats')
 
     if not isinstance(div, int) and not isinstance(div, float):
         raise TypeError('div must be a number')
@@ -29,7 +34,8 @@ def matrix_divided(matrix, div):
         if len(new_matrix[0]) != len(new_matrix[i]):
             raise TypeError('Each row of the matrix must have the same size')
         for i, val in enumerate(row):
-            if type(val) is not int and type(val) is not float:
-                  raise TypeError('matrix must be a matrix (list of lists) of integers/floats')
+            if not isinstance(val, int) and not isinstance(val, float):
+                raise TypeError(
+                    'matrix must be a matrix (list of lists) of integers/floats')
             row[i] = round(val / div, 2)
     return(new_matrix)
