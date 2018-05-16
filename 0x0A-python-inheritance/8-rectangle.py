@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 class BaseGeometry():
     """base class"""
-
     def area(self):
         """area function"""
         raise Exception('area() is not implemented')
+
     def integer_validator(self, name, value):
         """Validates value"""
         if not isinstance(value, int):
