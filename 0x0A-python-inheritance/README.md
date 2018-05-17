@@ -24,9 +24,9 @@
 
 **[2-is_same_class.py](2-is_same_class.py)** - A function that returns True if the object is exactly an instance of the specified class, else `False`.
 
-**[3-is_kind_of_class.py](3-is_kind_of_class.py)** - A function that returns `True` if the object is an instance of, or if the object is an instance of a class that inherited from, the specified class, else `False`
+**[3-is_kind_of_class.py](3-is_kind_of_class.py)** - A function that returns `True` if the object is an instance of, or if     the object is an instance of a class that inherited from, the specified class, else `False`
 
-**[4-inherits_from.py](4-inherits_from.py)** - A function that returns `True` if the object is an instance of a class that inherited from specified class, else `False`.
+**[4-inherits_from.py](4-inherits_from.py)** - A function that returns `True` if the object is an instance of a class that     inherited from specified class, else `False`.
 
 **[5-base_geometry.py](5-base_geometry.py)** - An empty class `BaseGeometry`
 
