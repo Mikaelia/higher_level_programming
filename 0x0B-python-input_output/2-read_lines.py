@@ -1,8 +1,4 @@
 #!/usr/bin/python3
-"""reads n lines of a text file"""
-import os
-
-
 def read_lines(filename="", nb_lines=0):
     with open(filename, encoding='utf-8') as f:
         if nb_lines <= 0 or nb_lines is False:
