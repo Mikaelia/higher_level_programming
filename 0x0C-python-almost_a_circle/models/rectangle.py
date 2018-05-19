@@ -82,9 +82,27 @@ class Rectangle(Base):
 
     def display(self):
         """prints rectangle"""
+        print("\n" * self.__y, end='')
         for x in range(self.__height):
-            print('#' * self.__width)
+            print(' ' * self.__x + '#' * self.__width)
 
     def __str__(self):
         """overloads str method"""
         return ("[Rectangle] ({}) {}/{} - {}/{})".format(self.id, self.__x, self.__y, self.__width, self.__height))
+
+    def update(self, *args, **kwargs):
+        """assigns an argument to each attribute"""
+        l = len(args)
+        if l > 0:
+            self.id = args[0]
+        if l > 1:
+            self.__width = args[1]
+        if l > 2:
+            self.__height = args[2]
+        if l > 3:
+            self.__x = args[3]
+        if l > 4:
+            self.__y = args[4]
+        else:
+            for name, value in kwargs.items():
+                setattr(self, name, value)
