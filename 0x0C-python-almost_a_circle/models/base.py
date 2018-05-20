@@ -31,7 +31,7 @@ class Base():
             data = []
             if (list_objs):
                 for obj in list_objs:
-                    data.append(vars(obj))
+                    data.append(obj.to_dictionary())
                 data = cls.to_json_string(data)
             f.write(data)
 
