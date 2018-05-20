@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """square module"""
 from models.rectangle import Rectangle
+import json
 
 class Square(Rectangle):
     """Square class"""
@@ -45,4 +46,11 @@ class Square(Rectangle):
                 setattr(self, item, value)
 
     def to_dictionary(self):
-
+        d = dict(vars(self))
+        d['size'] = self.width
+        for key in vars(self):
+            if "height" in key or "width" in key:
+                d.pop(key)
+            elif key.startswith('_Rectangle'):
+                d[key[12:]] = d.pop(key)
+        return d

@@ -106,3 +106,11 @@ class Rectangle(Base):
         else:
             for name, value in kwargs.items():
                 setattr(self, name, value)
+
+    def to_dictionary(self):
+        d = dict(vars(self))
+        s = len(type(self).__name__) + 3
+        for key in vars(self):
+            if key is not 'id':
+                d[key[s:]] = d.pop(key)
+        return d
