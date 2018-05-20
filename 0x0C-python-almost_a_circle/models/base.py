@@ -24,6 +24,16 @@ class Base():
             j = json.dumps(list_dictionaries)
         return j
 
+    @staticmethod
+    def from_json_string(json_string):
+        """ returns the list of the JSON string representation `json_string`
+            Args:
+                json_string(str): String containing a list of dictionaries
+            Returns:
+                Empty list if json_string is empty/None, else list represented
+        """
+        return json.loads(json_string)
+
     @classmethod
     def save_to_file(cls, list_objs):
         """saves json string to file"""
@@ -34,4 +44,35 @@ class Base():
                     data.append(obj.to_dictionary())
                 data = cls.to_json_string(data)
             f.write(data)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attributes already set
+            Args:
+                dictionary: Double pointer to a dictionary
+            Returns:
+                An instance with all attributes set
+        """
+        from models.rectangle import Rectangle
+        from models.square import Square
+
+        if cls.__name__ == "Rectangle":
+            r = Rectangle(1, 2)
+        elif cls.__name__ == "Square":
+            r = Square(5)
+        r.update(**dictionary) #double check why this works..
+        return r
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances"""
+        with open(cls.__name__ + '.json', mode='r', encoding='utf-8') as f:
+            l = []
+            if not f:
+                return l
+            json_list = json.dumps(json.load(f))
+            list_dictionaries = cls.from_json_string(json_list)
+            for d in list_dictionaries:
+                l.append(cls.create(**d))
+            return l
 
