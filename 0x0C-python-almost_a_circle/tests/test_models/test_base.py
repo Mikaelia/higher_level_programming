@@ -74,5 +74,28 @@ class TestBase(unittest.TestCase):
         list_output = Rectangle.from_json_string(list_input)
         self.assertTrue([] == list_output)
 
+    def test_create(self):
+        r1 = Rectangle(3, 5, 1, 3)
+        r1_dictionary = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dictionary)
+        self.assertFalse(r1 is r2)
+        self.assertFalse(r1 == r2)
+        self.assertEqual(r2.width, 3)
+        self.assertEqual(r2.height, 5)
+        self.assertEqual(r2.x, 1)
+        self.assertEqual(r2.y, 3)
+
+    def test_load_from_file(self):
+        r1 = Rectangle(10, 7, 2, 8)
+        r2 = Rectangle(2, 4)
+        list_rectangles_input = [r1, r2]
+        inlist = [r1.__str__(), r2.__str__()]
+        Rectangle.save_to_file(list_rectangles_input)
+        list_rectangles_output = Rectangle.load_from_file()
+        outlist = []
+        for instance in list_rectangles_output:
+            outlist.append(instance.__str__())
+        self.assertEqual(outlist, inlist)
+
 if __name__ == '__main__':
     unittest.main()
