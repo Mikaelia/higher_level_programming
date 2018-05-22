@@ -32,7 +32,9 @@ class Base():
             Returns:
                 Empty list if json_string is empty/None, else list represented
         """
-        return json.loads(json_string)
+        if json_string:
+            return json.loads(json_string)
+        return []
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -43,7 +45,9 @@ class Base():
                 for obj in list_objs:
                     data.append(obj.to_dictionary())
                 data = cls.to_json_string(data)
-            f.write(data)
+                f.write(data)
+            else:
+                f.write('[]')
 
     @classmethod
     def create(cls, **dictionary):
