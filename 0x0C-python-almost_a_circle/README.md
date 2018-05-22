@@ -1,6 +1,5 @@
 # 0x0C. Python - Almost a circle
 
----------------  
 ## A project on:
 - Unit testing
 - How to serialize and deserialize a Class with JSON
