@@ -67,7 +67,7 @@ class Base():
             r = Rectangle(1, 2)
         elif cls.__name__ == "Square":
             r = Square(5)
-        r.update(**dictionary)  # double check why this works..
+        r.update(**dictionary)
         return r
 
     @classmethod
