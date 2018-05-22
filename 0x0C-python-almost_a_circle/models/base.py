@@ -70,13 +70,14 @@ class Base():
     @classmethod
     def load_from_file(cls):
         """returns a list of instances"""
-        with open(cls.__name__ + '.json', mode='r', encoding='utf-8') as f:
-            l = []
-            if not f:
+        l = []
+        try:
+            with open(cls.__name__ + '.json', mode='r', encoding='utf-8') as f:
+                json_list = json.dumps(json.load(f))
+        except FileNotFoundError:
                 return l
-            json_list = json.dumps(json.load(f))
-            list_dictionaries = cls.from_json_string(json_list)
-            for d in list_dictionaries:
-                l.append(cls.create(**d))
-            return l
+        list_dictionaries = cls.from_json_string(json_list)
+        for d in list_dictionaries:
+            l.append(cls.create(**d))
+        return l
 

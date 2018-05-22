@@ -86,6 +86,9 @@ class TestBase(unittest.TestCase):
         self.assertEqual(r2.y, 3)
 
     def test_load_from_file(self):
+
+        #test rectangles
+
         r1 = Rectangle(10, 7, 2, 8)
         r2 = Rectangle(2, 4)
         list_rectangles_input = [r1, r2]
@@ -96,6 +99,9 @@ class TestBase(unittest.TestCase):
         for instance in list_rectangles_output:
             outlist.append(instance.__str__())
         self.assertEqual(outlist, inlist)
+
+        #test non-existing file
+        self.assertEqual(Square.load_from_file(), [])
 
 if __name__ == '__main__':
     unittest.main()
