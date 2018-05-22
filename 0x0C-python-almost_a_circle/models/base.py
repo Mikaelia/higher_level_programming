@@ -1,9 +1,12 @@
 #!/usr/bin/python3
 import json
 """Base class module"""
+
+
 class Base():
     """Base class"""
     __nb_objects = 0
+
     def __init__(self, id=None):
         """Base class instance
         Args:
@@ -39,7 +42,7 @@ class Base():
     @classmethod
     def save_to_file(cls, list_objs):
         """saves json string to file"""
-        with open(cls.__name__+ '.json', mode='w', encoding='utf-8') as f:
+        with open(cls.__name__ + '.json', mode='w', encoding='utf-8') as f:
             data = []
             if (list_objs):
                 for obj in list_objs:
@@ -64,7 +67,7 @@ class Base():
             r = Rectangle(1, 2)
         elif cls.__name__ == "Square":
             r = Square(5)
-        r.update(**dictionary) #double check why this works..
+        r.update(**dictionary)  # double check why this works..
         return r
 
     @classmethod
@@ -75,9 +78,8 @@ class Base():
             with open(cls.__name__ + '.json', mode='r', encoding='utf-8') as f:
                 json_list = json.dumps(json.load(f))
         except FileNotFoundError:
-                return l
+            return l
         list_dictionaries = cls.from_json_string(json_list)
         for d in list_dictionaries:
             l.append(cls.create(**d))
         return l
-

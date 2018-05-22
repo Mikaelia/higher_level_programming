@@ -3,8 +3,10 @@
 from models.rectangle import Rectangle
 import json
 
+
 class Square(Rectangle):
     """Square class"""
+
     def __init__(self, size, x=0, y=0, id=None):
         """Square constructor
             Args:
@@ -28,7 +30,8 @@ class Square(Rectangle):
 
     def __str__(self):
         """overloads str for square"""
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
+        return "[Square] ({}) {}/{} - {}".format(self.id,
+                                                 self.x, self.y, self.width)
 
     def update(self, *args, **kwargs):
         """updates instance attributes"""

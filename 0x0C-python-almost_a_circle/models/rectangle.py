@@ -2,6 +2,7 @@
 """The rectangle class"""
 from models.base import Base
 
+
 class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -88,7 +89,11 @@ class Rectangle(Base):
 
     def __str__(self):
         """overloads str method"""
-        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height))
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                                                        self.__x,
+                                                        self.__y,
+                                                        self.__width,
+                                                        self.__height))
 
     def update(self, *args, **kwargs):
         """assigns an argument to each attribute"""
