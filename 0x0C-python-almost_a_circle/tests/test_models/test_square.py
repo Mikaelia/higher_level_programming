@@ -9,6 +9,7 @@ class TestSquareClass(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        Base._Base__nb_objects = 0
         cls.s1 = Square(2, 1, 1)
 
     @classmethod
