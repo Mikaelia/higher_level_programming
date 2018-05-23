@@ -49,6 +49,7 @@ class Square(Rectangle):
                 setattr(self, item, value)
 
     def to_dictionary(self):
+        """returns dictionary"""
         d = dict(vars(self))
         d['size'] = self.width
         for key in vars(self):
