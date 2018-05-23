@@ -22,7 +22,7 @@ class Base():
     def to_json_string(list_dictionaries):
         """returns json representation of dict"""
         if not list_dictionaries or list_dictionaries is None:
-            j = []
+            j = "[]"
         else:
             j = json.dumps(list_dictionaries)
         return j
