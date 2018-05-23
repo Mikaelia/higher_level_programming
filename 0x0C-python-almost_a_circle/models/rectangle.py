@@ -113,6 +113,7 @@ class Rectangle(Base):
                 setattr(self, name, value)
 
     def to_dictionary(self):
+        """returns a dictionary"""
         d = dict(vars(self))
         s = len(type(self).__name__) + 3
         for key in vars(self):
