@@ -40,7 +40,7 @@ class TestBase(unittest.TestCase):
         json_dictionary = Base.to_json_string([dictionary])
         self.assertEqual(type(json_dictionary), type("I'm a string"))
         json_dictionary = Base.to_json_string(None)
-        self.assertEqual(json_dictionary, [])
+        self.assertEqual(json_dictionary, "[]")
 
     def test_save_to_file(self):
         r1 = Rectangle(10, 7, 2, 8)
