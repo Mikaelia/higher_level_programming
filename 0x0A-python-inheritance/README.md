@@ -15,7 +15,7 @@
 - All  files are interpreted/compiled on Ubuntu 14.04 LTS using python3
 - Code follows PEP 8 style
 
-## Tasks
+## Challenges
 
 - **[0-lookup.py](0-lookup.py)** - A function that returns the list of available attributes and methods of an object
 
