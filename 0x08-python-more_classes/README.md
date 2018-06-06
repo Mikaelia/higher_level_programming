@@ -9,7 +9,7 @@
 - All  files are interpreted/compiled on Ubuntu 14.04 LTS using python3
 - Code follows PEP 8 style
 
-## Tasks
+## Challenges
 
 - **[0-rectangle.py](0-rectangle.py)** - An empty class Rectangle that defines a rectangle
 - **[1-rectangle.py](1-rectangle.py)** - Rectangle class with private width and height attributes
