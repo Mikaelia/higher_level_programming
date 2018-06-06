@@ -22,6 +22,6 @@
 - **[10-add.py](10-add.py)**: Adds two integers and returns the result
 - **[11-pow.py](11-pow.py)**: Computes a to the power of b and return the value
 - **[12-fizzbuzz.py](12-fizzbuzz.py)**: Implementation fo FizzBuzz algorithm
-- **[13-insert_number.c, lists.h](13-insert_number.c, lists.h)**: A function in C that inserts a number into a sorted singly linked list
+- **[13-insert_number.c](13-insert_number.c)**: A function in C that inserts a number into a sorted singly linked list
 - **[100-print_tebahpla.py](100-print_tebahpla.py)**: Prints the alphabet, in reverse order, alternating lowercase and uppercase
 - **[101-remove_char_at.py](101-remove_char_at.py)**: Creates a copy of the string, removing the character at the position n 
