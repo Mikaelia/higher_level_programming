@@ -57,4 +57,3 @@ and more!
 26. [0x19-hash_tables](./0x19-hash_tables)
 27. [0x1A-sorting_algorithms](./0x1A-sorting_algorithms) ** Sorting algorithms project **
 28. [0x1B-makefiles](./0x1B-makefiles)
-
