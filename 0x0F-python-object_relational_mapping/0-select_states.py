@@ -2,7 +2,7 @@
 '''Script that lists all states from the database hbtn_0e_0_usa'''
 
 if __name__ == '__main__':
-    from  sys import argv
+    from sys import argv
     import MySQLdb
 
     db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
