@@ -9,6 +9,7 @@ from sqlalchemy import ForeignKey
 
 Base = declarative_base()
 
+
 class City(Base):
     __tablename__ = 'cities'
     id = Column(Integer, primary_key=True)
