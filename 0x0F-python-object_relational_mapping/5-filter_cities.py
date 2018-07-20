@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''Script that lists all states from the database hbtn_0e_0_usa'''
+'''Script that lists all cities of a state, using the database hbtn_0e_4_usa'''
 
 if __name__ == '__main__':
     from sys import argv
