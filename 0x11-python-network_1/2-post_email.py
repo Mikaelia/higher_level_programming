@@ -1,14 +1,15 @@
-#!/usr/bin/python3
+!/usr/bin/python3
 """
-Sends a request to a URL, displays the value of the X-Request-Id variable
+Submits a post requeset with a specific email
 """
 import urllib.request
 import sys
 
 if __name__ == '__main__':
-    url, email = (sys.argv[1], sys.argv[2])
-    req = urllib.request.Request(url, email.encode('ascii'))
-    print(email.encode('ascii'))
+    url = sys.argv[1]
+    values =  {'email': sys.argv[2]}
+    url_values = urllib.parse.urlencode(values)
+    req = urllib.request.Request(url, url_values.encode('utf-8'))
     with urllib.request.urlopen(req) as response:
         data = response.read()
         print(data.decode('utf-8'))
