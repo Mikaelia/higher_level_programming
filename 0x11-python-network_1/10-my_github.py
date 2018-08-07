@@ -6,7 +6,7 @@ import requests
 import sys
 if __name__ == "__main__":
     user = requests.get('https://api.github.com/user',
-                       auth=(argv[1], argv[2])).json()
+                        auth=(argv[1], argv[2])).json()
     if "id" in user:
         print(user['id'])
     else:
