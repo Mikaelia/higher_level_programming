@@ -10,7 +10,7 @@ if __name__ == '__main__':
     url = 'https://swapi.co/api/people/'
     payload = {'search': val}
     try:
-        response = requests.get(url, params=values).json()
+        response = requests.get(url, params=payload).json()
         count = response['count']
         print('Number of results: {}'.format(count))
         if count > 0:
