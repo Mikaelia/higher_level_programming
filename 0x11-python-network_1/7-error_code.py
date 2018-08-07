@@ -8,4 +8,4 @@ if __name__ == '__main__':
 
     error = requests.get(sys.argv[1]).status_code
     if error >= 400:
-            print('Error code: {}'.format(error))
+            print('Error code: {}'.format(error.text))
