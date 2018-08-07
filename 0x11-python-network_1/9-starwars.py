@@ -10,7 +10,7 @@ if __name__ == '__main__':
     values = {'search': val}
     try:
         response = requests.get('https://swapi.co/api/people/',
-            params=values).json()
+                                params=values).json()
         print('Number of results: {}'.format(response['count']))
         for result in response['results']:
             print (result['name'])
