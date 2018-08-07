@@ -6,4 +6,6 @@ if __name__ == '__main__':
     import requests
     import sys
 
-    print('Error code: {}'.format(requests.get(sys.argv[1]).status_code))
+    error = requests.get(sys.argv[1]).status_code
+    if error >= 400:
+            print('Error code: {}'.format(error))
