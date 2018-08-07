@@ -15,6 +15,6 @@ if __name__ == '__main__':
         print('Number of results: {}'.format(count))
         if count > 0:
             for result in response['results']:
-                print (result['name'])
+                print(result['name'])
     except ValueError:
         print("Must be JSON")
