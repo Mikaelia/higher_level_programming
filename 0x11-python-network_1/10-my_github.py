@@ -6,10 +6,11 @@ import requests
 import sys
 
 if __name__ == '__main__':
-    payload = (sys.argv[1], sys.argv[2])
-    response = requests.get('https://api.github.com/user/',
-                            auth=payload).json()
-    if 'id' in response:
+    url = 'https://api.github.com/user/'
+    payload = {'login': sys.argv[1]}
+    response = requests.get(url, params=payload,
+                            auth=(sys.argv[1], sys.argv[2])).json()
+    try:
         print(response['id'])
-    else:
+    except KeyError:
         print('None')

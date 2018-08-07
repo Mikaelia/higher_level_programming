@@ -1,18 +1,20 @@
 #!/usr/bin/python3
 """
-Sends a search request to Starwars API
+    Sends a search request to Starwars API
 """
 import requests
 import sys
 
 if __name__ == '__main__':
     val = sys.argv[1] if len(sys.argv) > 1 else ''
-    values = {'search': val}
+    url = 'https://swapi.co/api/people/'
+    payload = {'search': val}
     try:
-        response = requests.get('https://swapi.co/api/people/',
-                                params=values).json()
-        print('Number of results: {}'.format(response['count']))
-        for result in response['results']:
-            print (result['name'])
+        response = requests.get(url, params=values).json()
+        count = response['count']
+        print('Number of results: {}'.format(count))
+        if count > 0:
+            for result in response['results']:
+                print (result['name'])
     except ValueError:
         print("Must be JSON")
