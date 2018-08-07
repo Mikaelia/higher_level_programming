@@ -6,9 +6,9 @@ if __name__ == '__main__':
     import requests
     import sys
 
-    response = requests.get(sys.argv[1])
-    error = response.error_code
-    if error > 400:
-            print('Error code: {}'.format(error))
-    else:
+    try:
+        response = requests.get(sys.argv[1])
+        response.raise_for_status()
         print(response.text)
+    except requests.exceptions.HTTPError as e:
+        print('Error code: {}'.format(e.response.status_code))
