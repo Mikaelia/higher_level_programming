@@ -1,15 +1,16 @@
 #!/usr/bin/python3
 """
-    Sends and email via post
+Sends and email via post
 """
-
-if __name__ == '__main__':
-    import urllib.request
-    import utllib.parse
-    import sys
-
-    data = urllib.parse.urlencode({'email': sys.argv[2]})
-    data = data.encode('utf-8')
-    request = urllib.request.Request(sys.argv[1], data)
-    with urllib.request.urlopen(request) as response:
-        print(response.read().decode(encoding='utf-8'))
+import urllib.request
+import urllib.parse
+from sys
+if __name__ == "__main__":
+    info = {'email': sys.argv[2]}
+    data = urllib.parse.urlencode(info)
+    data = data.encode('ascii')
+    url = sys.argv[1]
+    reply = urllib.request.Request(url, data)
+    with urllib.request.urlopen(reply) as rep:
+        body = rep.read()
+    print(body.decode(encoding="utf-8"))
