@@ -1,9 +1,10 @@
 #!/usr/bin/nodejs
 
-const myString = 'C is fun';
-
-let i;
-while (i < process.argv[2]) {
-  console.log(myString);
-  i++;
+const num = process.argv[2];
+if (isNaN(num)) {
+  console.log('Missing arg');
+} else {
+  for (let i = 0; i < num; i++) {
+    console.log('C is fun');
+  }
 }
