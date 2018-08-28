@@ -1,6 +1,6 @@
 #!/usr/bin/nodejs
 
-var myArray = [];
+let myArray = [];
 process.argv.forEach(function (element, index) {
   if (index > 1) {
     myArray.push(element);
