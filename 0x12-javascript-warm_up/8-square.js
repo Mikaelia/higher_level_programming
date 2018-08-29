@@ -1,6 +1,6 @@
 #!/usr/bin/nodejs
 
-const size = parseInt(process.argv[2]) || 'Missing size';
+const size = parseInt(process.argv[2]) || console.log('Missing size');
 
 for (let i = 0; i < size; i++) {
   let myString = '';
