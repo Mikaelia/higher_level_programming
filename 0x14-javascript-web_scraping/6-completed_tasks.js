@@ -8,7 +8,7 @@ request(url, function (error, response, body) {
   if (error) {
     console.log(error);
   } else {
-    var taskCount = {
+    let taskCount = {
       '1': 0,
       '2': 0,
       '3': 0,
