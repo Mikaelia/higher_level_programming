@@ -8,12 +8,13 @@ request(url, function (error, response, body) {
     console.log(error);
   } else {
     let count = 0;
+    const hasId = /18/;
     const data = JSON.parse(body);
     const movieList = (data.results);
     for (let movie of movieList) {
       const list = movie.characters;
       for (let character of list) {
-        if (character === 'https://swapi.co/api/people/18/') {
+        if (hasId.test(character) === true) {
           count += 1;
         }
       }
