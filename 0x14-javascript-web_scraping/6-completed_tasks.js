@@ -18,8 +18,8 @@ request(url, function (error, response, body) {
         } else {
           taskCount[id] += 1;
         }
+      }
     }
+    console.log(taskCount);
   }
-  console.log(taskCount);
-}
 });
