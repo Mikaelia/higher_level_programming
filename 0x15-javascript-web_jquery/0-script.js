@@ -1,4 +1,4 @@
 #!/usr/bin/node
 
-let elem  = document.querySelector('html');
+let elem = document.querySelector('html');
 elem.style.color = '#FF0000';
