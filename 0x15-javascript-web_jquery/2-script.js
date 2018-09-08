@@ -1,3 +1,5 @@
-$("HEADER").click(function() {
-    $('HEADER').css("color", "#FF0000");
+$(function () {
+  $('HEADER').click(function () {
+    $('HEADER').css('color', '#FF0000');
+  });
 });

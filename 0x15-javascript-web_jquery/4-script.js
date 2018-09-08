@@ -1,5 +1,5 @@
-elem = $("HEADER");
-
-$("DIV#toggle_header").click(function() {
-    elem.toggleClass("green red");
+$(function () {
+  $('#toggle_header').click(function () {
+    $('header').toggleClass('red green');
+  });
 });
